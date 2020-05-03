@@ -98,8 +98,13 @@ Downloading node-v10.14.2-linux-x64.tar.gz...
 -> https://nodejs.org/dist/v10.14.2/node-v10.14.2-linux-x64.tar.gz
 Installing node-v10.14.2-linux-x64...
 Installed node-v10.14.2-linux-x64 to $HOME/.nodenv/versions/10.14.2
-$ ls .nodenv/versions
-10.14.2
+$ nodenv install 12.16.1
+Downloading node-v12.16.1-linux-x64.tar.gz...
+-> https://nodejs.org/dist/v12.16.1/node-v12.16.1-linux-x64.tar.gz
+Installing node-v12.16.1-linux-x64...
+Installed node-v12.16.1-linux-x64 to /home/kashiba/.nodenv/versions/12.16.1
+$ ls ~/.nodenv/versions
+10.14.2  12.16.1
 ```
 
 - shims リハッシュ
