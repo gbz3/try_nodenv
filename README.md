@@ -102,7 +102,7 @@ $ nodenv install 12.16.1
 Downloading node-v12.16.1-linux-x64.tar.gz...
 -> https://nodejs.org/dist/v12.16.1/node-v12.16.1-linux-x64.tar.gz
 Installing node-v12.16.1-linux-x64...
-Installed node-v12.16.1-linux-x64 to /home/kashiba/.nodenv/versions/12.16.1
+Installed node-v12.16.1-linux-x64 to $HOME/.nodenv/versions/12.16.1
 $ ls ~/.nodenv/versions
 10.14.2  12.16.1
 ```
@@ -148,4 +148,33 @@ $ cd git_repos/try_nodenv/
 $ nodenv local 10.14.2
 $ cat .node-version
 10.14.2
+```
+
+## nodenvでいつも使うパッケージを自動でインストールする
+
+[https://qiita.com/tea-red/items/361c72df55b3fcd0e0bf](https://qiita.com/tea-red/items/361c72df55b3fcd0e0bf)
+
+- プラグインインストール
+
+```bash
+$ git clone https://github.com/nodenv/nodenv-default-packages.git "$(nodenv root)/plugins/nodenv-default-packages"
+$
+```
+
+- default-packagesファイル作成
+
+```bash
+$ touch $(nodenv root)/default-packages
+$ vi $(nodenv root)/default-packages
+$ cat $(nodenv root)/default-packages
+typescript
+$ nodenv default-packages install --all
+$HOME/.nodenv/versions/10.14.2/bin/tsc -> $HOME/.nodenv/versions/10.14.2/lib/node_modules/typescript/bin/tsc
+$HOME/.nodenv/versions/10.14.2/bin/tsserver -> $HOME/.nodenv/versions/10.14.2/lib/node_modules/typescript/bin/tsserver
++ typescript@3.8.3
+added 1 package from 1 contributor in 1.926s
+$HOME/.nodenv/versions/12.16.1/bin/tsc -> $HOME/.nodenv/versions/12.16.1/lib/node_modules/typescript/bin/tsc
+$HOME/.nodenv/versions/12.16.1/bin/tsserver -> $HOME/.nodenv/versions/12.16.1/lib/node_modules/typescript/bin/tsserver
++ typescript@3.8.3
+added 1 package from 1 contributor in 1.35s
 ```
